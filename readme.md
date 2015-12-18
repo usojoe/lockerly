@@ -1,4 +1,4 @@
-## Laravel PHP Framework
+## Lockerly VFW Locker Rental Manager - P4 Assignment
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
 [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
@@ -6,22 +6,20 @@
 [![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
 [![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
-
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+Lockerly is a simple application local Veteran of Foreign Wars clubs can use to manage locker assignments, but really I'm trying to build it so that it can handle all the leasing or borrowing of any club items and vice versa if a member loans something to the club. 
 
 ## Official Documentation
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+This Readme is pretty much the only official documentation for my applciation, but more documentation for the Laravel framework it's built on can be found on the [Laravel website](http://laravel.com/docs).
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+You are invited to please help strenghten this application with tips and code. 
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within Lockerly, please send an e-mail to Joe Lee at josephandrewlee@g.harvard.edu. All security vulnerabilities will be promptly addressed.
 
 ### License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+The Lockerly application is shareware. Please feel free to build from it or add to it.
