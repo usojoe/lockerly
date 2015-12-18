@@ -1,11 +1,5 @@
 ## Lockerly VFW Locker Rental Manager - P4 Assignment
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
-
 Lockerly is a simple application local Veteran of Foreign Wars clubs can use to manage locker assignments, but really I'm trying to build it so that it can handle all the leasing or borrowing of any club items and vice versa if a member loans something to the club. 
 
 ## Official Documentation
