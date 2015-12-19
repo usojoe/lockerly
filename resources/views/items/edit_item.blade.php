@@ -11,12 +11,12 @@
     <form class="form-horizontal" method="post" action="{{url('updateitem/'.$item->id)}}" enctype="multipart/form-data">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Edit Locker</h3>
+          <h3 class="panel-title">Edit Item</h3>
         </div>
         <div class="panel-body">
           <table>
             <tr>
-              <td>Locker Number: </td>
+              <td>Item Number: </td>
               <td>
                 <input type="text" name="title" value="{{ (old('title') != '') ? old('title') : $item->title }}" >
                 {!! $errors->first('title', '<span class="help-block text-danger">:message</span>') !!}

@@ -39,6 +39,22 @@
                       </td>
                       </tr>
 
+                      <tr>
+                      <td>Phone: </td>
+                      <td>
+                          <input type="text" name="phone" value="{{ old('phone') }}" >
+                           {!! $errors->first('email', '<span class="help-block text-danger">:message</span>') !!}
+                      </td>
+                      </tr>
+
+                      <tr>
+                      <td>VFW Member Number:  </td>
+                      <td>
+                          <input type="text" name="vfw_member_number" value="{{ old('vfw_member_number') }}" >
+                           {!! $errors->first('email', '<span class="help-block text-danger">:message</span>') !!}
+                      </td>
+                      </tr>
+
                       <tr><td colspan="2">&nbsp;</td></tr>
 
                       <tr>

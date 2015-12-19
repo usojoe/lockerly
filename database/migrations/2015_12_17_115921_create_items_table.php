@@ -17,14 +17,11 @@ class CreateItemsTable extends Migration
 
         {
 
-
                       $table->increments('id');
 
-                      $table->string('type');
-                      $table->text('description');
-                      $table->decimal('value', 6, 2);
-                      $table->boolean('insured')->default(1);
-                      $table->string('image');
+                      $table->string('title');
+                      $table->text('item_description');
+                      $table->string('item_number');
 
                       # this one was giving me issues at first but I think I've got it now ..
                       $table->timestamps();
