@@ -19,7 +19,7 @@ class UsersTableSeeder extends Seeder
              'member_number' => 0000001,
              'phone'=> 3333333333,
              'email' => 'jill@harvard.edu',
-             'passoword' => 'helloworld',
+             'password' => 'helloworld',
          ]);
 
          DB::table('users')->insert([
@@ -30,7 +30,7 @@ class UsersTableSeeder extends Seeder
              'member_number' => 0000002,
              'phone'=> 3333334333,
              'email' => 'frank@harvard.edu',
-             'passoword' => 'franksworld',
+             'password' => 'franksworld',
          ]);
 
          DB::table('users')->insert([
@@ -39,9 +39,9 @@ class UsersTableSeeder extends Seeder
              'first_name' => 'Jamal',
              'last_name' => 'Baker',
              'member_number' => 0000003,
-             'phone'=> 3333334333,
+             'phone'=> 3323334333,
              'email' => 'jamal@harvard.edu',
-             'passoword' => 'helloworld',
+             'password' => 'helloworld',
          ]);
      }
 }
