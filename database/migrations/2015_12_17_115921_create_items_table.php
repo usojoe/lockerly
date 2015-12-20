@@ -18,11 +18,9 @@ class CreateItemsTable extends Migration
         {
 
                       $table->increments('id');
-
                       $table->string('title');
                       $table->text('item_description');
-                      $table->string('item_number');
-
+	                    $table->enum('item_type', array('Locker', 'Darts', 'Parking Space'))->default('Locker');
                       # this one was giving me issues at first but I think I've got it now ..
                       $table->timestamps();
 

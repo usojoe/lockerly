@@ -11,12 +11,21 @@
     <form class="form-horizontal" method="post" action="{{url('/saveitem')}}" enctype="multipart/form-data">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Add Locker</h3>
+          <h3 class="panel-title">Add Item</h3>
         </div>
         <div class="panel-body">
           <table>
+
             <tr>
-              <td>Locker Number:</td>
+              <td>Item Type</td>
+              <td>
+                <input type="select" name="type" value="{{ old('title') }}" >
+                {!! $errors->first('title', '<span class="help-block text-danger">:message</span>') !!}
+              </td>
+            </tr>
+
+            <tr>
+              <td>Item Name</td>
               <td>
                 <input type="text" name="title" value="{{ old('title') }}" >
                 {!! $errors->first('title', '<span class="help-block text-danger">:message</span>') !!}
@@ -36,7 +45,7 @@
             <tr>
               <td><input type="hidden" name="_token" value="{{ csrf_token() }}"></td>
               <td>
-                <input type="submit" name="add_user" value="Add Item" class="btn btn-default" />
+                <input type="submit" name="add_item" value="Add Item" class="btn btn-default" />
                 <a href="{{ URL::to('itemlist') }}" class="btn btn-default">Back</a>
               </td>
             </tr>

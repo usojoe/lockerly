@@ -9,13 +9,15 @@ class CreateRentalsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('rentals', function($table){
+		Schema::create('rentals', function($table)
+    {
             $table->increments('id');
             $table->integer('item_id')->unsigned();
             $table->foreign('item_id')->references('id')->on('items');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->boolean('is_confirmed')->default(0);
+            $table->datetime('rent_from');
+            $table->datetime('rent_to');
             $table->timestamps();
         });
 	}
@@ -27,5 +29,9 @@ class CreateRentalsTable extends Migration {
 	public function down()
 	{
 		Schema::drop('rentals');
+
+            $table->dropforeign('item_id')->references('id')->on('items');
+            $table->dropforeign('user_id')->references('id')->on('users');
+
 	}
 }

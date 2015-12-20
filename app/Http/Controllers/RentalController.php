@@ -1,6 +1,6 @@
 <?php
 
-class RentalsController extends BaseController {
+class RentalController extends BaseController {
 
 
 					public function __construct() {
@@ -10,7 +10,7 @@ class RentalsController extends BaseController {
 						$this->beforeFilter('admin', array('only'=>array('getManage', 'postManage')));
 
 					}
-					
+
 					public function getIndex() {
 						return View::make('rentals.index')
 							->with('rentals', rental::where('user_id', '=', Auth::user()->id)->orderBy('created_at', 'DESC')->paginate(10));
@@ -21,8 +21,8 @@ class RentalsController extends BaseController {
 							$rental = new rental;
 							$rental->item_id = Input::get('item_id');
 							$rental->user_id = Auth::user()->id;
-							$rental->book_from = Input::get('pick_up_date');
-							$rental->book_to = Input::get('drop_off_date');
+							$rental->rent_from = Input::get('pick_up_date');
+							$rental->rent_to = Input::get('drop_off_date');
 							$rental->save();
 							return Redirect::to('rentals')
 								->with('message', 'Your rental has sent to us. Thank you!');
