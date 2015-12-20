@@ -1,6 +1,6 @@
 ## Lockerly VFW Locker Rental Manager - P4 Assignment
 
-Lockerly is a simple application local Veteran of Foreign Wars clubs can use to manage locker assignments, but really I'm trying to build it so that it can handle all the leasing or borrowing of any club items and vice versa if a member loans something to the club. 
+Lockerly is a simple application local Veteran of Foreign Wars clubs can use to manage locker assignments, dart checkouts, pool cue leasing or borrowing of any club items and vice versa if a member loans something to the club. 
 
 ## Official Documentation
 
