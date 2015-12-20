@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBooktofromTable extends Migration
+class CreateRentalPeriodsTable extends Migration
 {
     /**
      * Run the migrations.
