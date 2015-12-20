@@ -16,7 +16,10 @@ class DatabaseSeeder extends Seeder
 
         $this->call(UsersTableSeeder::class);
         $this->call(ItemsTableSeeder::class);
-
+        $this->call(StatusTableSeeder::class);
+        $this->call(BooktofromTableSeeder::class);
+        $this->call(RentalsTableSeeder::class);
+              
         Model::reguard();
     }
 }
