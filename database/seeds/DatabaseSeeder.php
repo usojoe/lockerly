@@ -19,7 +19,8 @@ class DatabaseSeeder extends Seeder
         $this->call(StatusTableSeeder::class);
         $this->call(BooktofromTableSeeder::class);
         $this->call(RentalsTableSeeder::class);
-              
+        $this->call(Item_TypesTableSeeder::class);
+
         Model::reguard();
     }
 }
