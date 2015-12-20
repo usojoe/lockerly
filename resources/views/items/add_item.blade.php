@@ -19,7 +19,7 @@
             <tr>
               <td>Item Type</td>
               <td>
-                <input type="select" name="type" value="{{ old('title') }}" >
+                <input type="select" name="item_type" value="{{ old('item_type') }}" >
                 {!! $errors->first('title', '<span class="help-block text-danger">:message</span>') !!}
               </td>
             </tr>
