@@ -1,7 +1,24 @@
 <?php
 
-class RentalController extends BaseController {
+namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+
+use DB;
+use App\Rentals;
+
+class RentalController extends HomeController {
+
+	function rentals() {
+
+				$rentals = \App\Rental::all();
+
+				dump($rentals);
+
+	}
 
 					public function __construct() {
 						parent::__construct();

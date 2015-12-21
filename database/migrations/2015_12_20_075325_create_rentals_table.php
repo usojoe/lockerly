@@ -12,9 +12,7 @@ class CreateRentalsTable extends Migration {
 		Schema::create('rentals', function($table)
     {
             $table->increments('id');
-            $table->integer('item_id')->unsigned();
             $table->foreign('item_id')->references('id')->on('items');
-            $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->datetime('rent_from');
             $table->datetime('rent_to');

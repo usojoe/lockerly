@@ -18,7 +18,7 @@ Route::get('/', function () {
 
 
 */
-//For User
+//For Users
 Route::get('/', 'HomeController@userList');
 Route::get('adduser', 'HomeController@addUser');
 Route::post('saveuser', 'HomeController@saveUser');
@@ -33,6 +33,14 @@ Route::post('saveitem', 'ItemController@saveItem');
 Route::get('edititem/{id}', 'ItemController@editItem');
 Route::any('updateitem/{id}', 'ItemController@updateItem');
 Route::get('deleteitem/{id}', 'ItemController@deleteItem');
+
+//For rentals
+Route::get('rentallist', 'RentalController@rentalList');
+Route::get('addrental', 'RentalController@addRental');
+Route::post('saverental', 'RentalController@saveRental');
+Route::get('editrental/{id}', 'RentalController@editRental');
+Route::any('updaterental/{id}', 'RentalController@updateRental');
+Route::get('deleterental/{id}', 'RentalController@deleteRental');
 
 /*
 Route::get('/debug', function() {
