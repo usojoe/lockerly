@@ -50,22 +50,8 @@
 
                         {!! $errors->first('user_type', '<span class="help-block text-danger">:message</span>') !!}
                     </td>
-                    </tr>
+                    </tr>                    
                     
-                    <tr>
-                    <td>Item type:</td>
-                    <td>
-                        <select name="item" style="width: 179px;">
-                            <option value="">Select item</option>
-                            @foreach ($item_list as $val)
-                            <option value="{{ $val->id }}" {{ ($val->id == @$item_id) ? "selected=''" : ''}} >{{ $val->title }}</option>
-                            @endforeach
-                        </select>
-                        
-                        {!! $errors->first('item', '<span class="help-block text-danger">:message</span>') !!}
-                    </td>
-                    </tr>
-
                     <tr><td colspan="2">&nbsp;</td></tr>
 
                     <tr>

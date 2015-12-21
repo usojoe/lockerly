@@ -31,6 +31,20 @@
                       </td>
                       </tr>
                       
+                      <tr>
+                      <td>Item type: </td>
+                      <td>
+                          <select name="item_type" style="width: 179px;">
+                              <option value="">Select item type</option>
+                              @foreach ($item_type_list as $val)
+                              <option value="{{ $val->id }}">{{ $val->item_type_name }}</option>
+                              @endforeach
+                          </select>
+                          
+                          {!! $errors->first('item_type', '<span class="help-block text-danger">:message</span>') !!} 
+                      </td>
+                      </tr>
+                      
                       <tr><td colspan="2">&nbsp;</td></tr>
 
                       <tr>

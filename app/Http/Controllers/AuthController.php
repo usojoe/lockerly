@@ -37,19 +37,13 @@ class AuthController extends Controller
            {
               return redirect("dashboard"); 
            }
-        }
+        }        
         
-        
-        
-        /*
         return redirect()
             ->back()
             ->withInput()
             ->with('flash_notification.message', 'Wrong email or password')
-            ->with('flash_notification.level', 'danger');
-         * 
-         */
-        
+            ->with('flash_notification.level', 'danger');       
     }
     
     public function logout() {

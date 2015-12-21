@@ -3,6 +3,9 @@
 @section('content')
     <form class="form-horizontal" method="post" action="{{url('/login')}}" enctype="multipart/form-data">
         <table style="margin: 75px auto 0px;">
+        
+        <tr><td colspan="2">@include('partials.flash_notification')</td></tr> 
+        
         <tr>
         <td>Email: </td>
         <td>

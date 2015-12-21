@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class UserItemRecordsTableSeeder extends Seeder
+class ItemTypeTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,31 +11,27 @@ class UserItemRecordsTableSeeder extends Seeder
      */
     public function run()
     {
-      DB::table('user_item_records')->insert([
+      DB::table('item_type')->insert([
           'created_at' => Carbon\Carbon::now()->toDateTimeString(),
           'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-          'item_id' => 1,
-          'user_id' => 1,
-          'from_date' => '2001-12-02',
-          'to_date' => '2003-12-01',
+          'item_type_name' => 'Locker',
+          'description' => 'Lockers for VFW Members',
       ]);
 
-      DB::table('user_item_records')->insert([
+      DB::table('item_type')->insert([
           'created_at' => Carbon\Carbon::now()->toDateTimeString(),
           'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-          'item_id' => 2,
-          'user_id' => 2,
-          'from_date' => '2001-12-02',
-          'to_date' => '2003-12-01',
+          'item_type_name' => 'Pool Stick',
+          'description' => 'Pool Sticks',
       ]);
 
-      DB::table('user_item_records')->insert([
+      DB::table('item_type')->insert([
           'created_at' => Carbon\Carbon::now()->toDateTimeString(),
           'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-          'item_id' => 3,
-          'user_id' => 3,
-          'from_date' => '2001-12-02',
-          'to_date' => '2003-12-01',
+          'item_type_name' => 'Parking Space',
+          'description' => 'Parking Spaces',
       ]);
+
+
     }
 }

@@ -26,6 +26,22 @@ Route::post('updateuser/{id}', 'HomeController@updateUser');
 Route::get('deleteuser/{id}', 'HomeController@deleteUser');
 
 //For items
+Route::get('itemtypelist', 'ItemController@itemTypeList');
+Route::get('additemtype', 'ItemController@addItemType');
+Route::post('saveitemtype', 'ItemController@saveItemType');
+Route::get('edititemtype/{id}', 'ItemController@editItemType');
+Route::any('updateitemtype/{id}', 'ItemController@updateItemType');
+Route::get('deleteitemtype/{id}', 'ItemController@deleteItemType');
+
+Route::any('useritemlist', 'ItemController@userItemList');
+Route::any('assignuseritem', 'ItemController@assignUserItem');
+Route::post('saveassignuseritem', 'ItemController@saveAssignUserItem');
+
+Route::get('edituseritem/{id}', 'ItemController@editUserItem');
+Route::post('updateuseritem/{id}', 'ItemController@updateUserItem');
+Route::get('deleteuseritem/{id}', 'ItemController@deleteUserItem');
+
+
 Route::get('itemlist', 'ItemController@itemList');
 Route::get('additem', 'ItemController@addItem');
 Route::post('saveitem', 'ItemController@saveItem');

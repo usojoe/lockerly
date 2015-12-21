@@ -60,18 +60,7 @@
                       </td>
                       </tr>
                       
-                      <tr>
-                      <td>Item type: </td>
-                      <td>
-                          <select name="item" style="width: 179px;">
-                              <option value="">Select item</option>
-                              @foreach ($item_list as $val)
-                              <option value="{{ $val->id }}">{{ $val->title }}</option>
-                              @endforeach
-                          </select>
-                      </td>
-                      </tr>
-
+                     
                       <tr><td colspan="2">&nbsp;</td></tr>
 
                       <tr>

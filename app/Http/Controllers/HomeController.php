@@ -19,12 +19,8 @@ class HomeController extends Controller
      */
     public function userList()
     {
-        $users = DB::table('users')
-                ->select('users.*', 'items.title')
-                ->leftJoin('user_item_records', 'user_item_records.user_id', '=', 'users.id')
-                ->leftJoin('items', 'items.id', '=', 'user_item_records.item_id')
-                ->get();
-        
+        $users = DB::table('users')->get(); 
+                        
         return view('home.user_list', ['user_list' => $users]);
     }
     
@@ -55,17 +51,7 @@ class HomeController extends Controller
         $user->save();
         $id = $user->id;
         
-        //add user item.
-        if($request->get('item') !="")
-        {
-            DB::table('user_item_records')->insert(
-                [
-                    'item_id' => $request->get('item'), 
-                    'user_id' => $id
-                ]
-            );
-        }    
-        
+                
         return redirect('userList')
             ->with('flash_notification.message', 'Successfully added your user')
             ->with('flash_notification.level', 'success');
@@ -77,14 +63,7 @@ class HomeController extends Controller
         $user = User::find($id);
         
         //All item
-        $allitems = DB::table('items')->get();
-        
-        //item id        
-        $items = DB::table('user_item_records')
-                ->select('item_id')
-                ->where('user_id', '=', $id)
-                ->first();   
-        
+        $allitems = DB::table('items')->get();        
                        
         return View('users.edit_user', ['user' => $user, 'item_list' => $allitems, 'item_id' => @$items->item_id]);
     }
@@ -106,19 +85,7 @@ class HomeController extends Controller
         $user->user_type  = $request->get('user_type');
         
         $user->save();
-        
-        
-        //Update user items
-        DB::table('user_item_records')->where('user_id', $id)->delete();
-
-        DB::table('user_item_records')->insert(
-            [
-                'item_id' => $request->get('item'), 
-                'user_id' => $id
-            ]
-        );
-        
-
+       
         return redirect('userList')
             ->with('flash_notification.message', 'Successfully added your user')
             ->with('flash_notification.level', 'success');

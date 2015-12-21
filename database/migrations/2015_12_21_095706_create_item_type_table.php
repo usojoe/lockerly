@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateItemsTable extends Migration
+class CreateItemTypeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateItemsTable extends Migration
      */
      public function up() {
 
-         Schema::create('items', function (Blueprint $table) {
+         Schema::create('item_type', function (Blueprint $table) {
 
              # Increments method will make a Primary, Auto-Incrementing field.
              # Most tables start off this way
@@ -23,16 +23,13 @@ class CreateItemsTable extends Migration
              $table->timestamps();
 
              # The rest of the fields...
-             $table->string('title');
-             $table->string('author');
-             $table->integer('published');
-             $table->string('cover');
-             $table->string('purchase_link');
-
+             $table->string('item_type_name');
+             $table->string('description');
              # FYI: We're skipping the 'tags' field for now; more on that later.
 
          });
      }
+
     /**
      * Reverse the migrations.
      *
@@ -40,6 +37,6 @@ class CreateItemsTable extends Migration
      */
     public function down()
     {
-        //
+    Schema::drop('item_type');
     }
 }

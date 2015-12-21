@@ -8,6 +8,8 @@
     </div>
     
     <div class="col-md-10 rightBar">
+        <a href="/adduser"><span class="glyphicon glyphicon-plus"></span> Add User</a>
+        <br><br>
         
         @include('partials.flash_notification')
         
@@ -16,8 +18,7 @@
             <th>First Name</th>
             <th>Last Name</th>
             <th>Email</th>
-            <th>User Type</th>
-            <th>Item</th>
+            <th>User Type</th>            
             <th>Option</th>
         </tr>
     @foreach ($user_list as $val)
@@ -25,8 +26,7 @@
         <td>{{ $val->first_name }}</td>
         <td>{{ $val->last_name }}</td>
         <td>{{ $val->email }}</td>
-        <td>{{ $val->user_type }}</td>
-        <td>{{ $val->title }}</td>
+        <td>{{ $val->user_type }}</td>        
         <td>
             <a href="{{ URL::to('edituser/'.$val->id) }}"><span class="glyphicon glyphicon-edit"></span> Edit</a>
             <a href="{{ URL::to('deleteuser/'.$val->id) }}" onclick="return confirm('Are you sure you want to delete this user?');"><span class="glyphicon glyphicon-remove-circle"></span> Delete</a>
