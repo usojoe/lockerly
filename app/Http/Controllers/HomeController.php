@@ -19,13 +19,19 @@ class HomeController extends Controller
      */
     public function userList()
     {
-        $users = DB::table('users')->get();
+        $users = DB::table('users')
+                ->select('users.*', 'items.title')
+                ->leftJoin('user_item_records', 'user_item_records.user_id', '=', 'users.id')
+                ->leftJoin('items', 'items.id', '=', 'user_item_records.item_id')
+                ->get();
+        
         return view('home.user_list', ['user_list' => $users]);
     }
     
     public function addUser() {        
         
-        return View('users.add_user');        
+        $items = DB::table('items')->get();        
+        return View('users.add_user', ['item_list' => $items]);        
     }
     
     public function saveUser(Request $request) {
@@ -33,7 +39,9 @@ class HomeController extends Controller
         $this->validate($request, [
             'first_name' => 'required',
             'last_name'  => 'required',
-            'email'      => 'email'
+            'email'      => 'required|email',
+            'password'   => 'required',
+            'user_type'  => 'required'
         ]);
         
         $user = new User; 
@@ -41,10 +49,24 @@ class HomeController extends Controller
         $user->first_name = $request->get('first_name');
         $user->last_name  = $request->get('last_name');
         $user->email      = $request->get('email');
-       
+        $user->password   = bcrypt($request->get('password'));
+        $user->user_type  = $request->get('user_type');
+               
         $user->save();
+        $id = $user->id;
         
-        return redirect('/')
+        //add user item.
+        if($request->get('item') !="")
+        {
+            DB::table('user_item_records')->insert(
+                [
+                    'item_id' => $request->get('item'), 
+                    'user_id' => $id
+                ]
+            );
+        }    
+        
+        return redirect('userList')
             ->with('flash_notification.message', 'Successfully added your user')
             ->with('flash_notification.level', 'success');
         
@@ -53,7 +75,18 @@ class HomeController extends Controller
     public function editUser($id) {
         
         $user = User::find($id);
-        return View('users.edit_user', ['user' => $user]);
+        
+        //All item
+        $allitems = DB::table('items')->get();
+        
+        //item id        
+        $items = DB::table('user_item_records')
+                ->select('item_id')
+                ->where('user_id', '=', $id)
+                ->first();   
+        
+                       
+        return View('users.edit_user', ['user' => $user, 'item_list' => $allitems, 'item_id' => @$items->item_id]);
     }
     
     public function updateUser(Request $request, $id){
@@ -61,7 +94,8 @@ class HomeController extends Controller
         $this->validate($request, [
             'first_name' => 'required',
             'last_name'  => 'required',
-            'email'      => 'email'
+            'email'      => 'required|email',
+            'user_type'  => 'required'
         ]);
                 
         $user = User::findOrFail($id);
@@ -69,10 +103,23 @@ class HomeController extends Controller
         $user->first_name = $request->get('first_name');
         $user->last_name  = $request->get('last_name');
         $user->email      = $request->get('email');
+        $user->user_type  = $request->get('user_type');
         
         $user->save();
+        
+        
+        //Update user items
+        DB::table('user_item_records')->where('user_id', $id)->delete();
 
-        return redirect('/')
+        DB::table('user_item_records')->insert(
+            [
+                'item_id' => $request->get('item'), 
+                'user_id' => $id
+            ]
+        );
+        
+
+        return redirect('userList')
             ->with('flash_notification.message', 'Successfully added your user')
             ->with('flash_notification.level', 'success');
                
@@ -84,8 +131,11 @@ class HomeController extends Controller
     {
         $user = User::findOrFail($id);
         $user->delete();
+        
+        //Delete user item
+        DB::table('user_item_records')->where('user_id', $id)->delete();
 
-        return redirect('/')
+        return redirect('userList')
             ->with('flash_notification.message', 'Successfully deleted your user')
             ->with('flash_notification.level', 'success');
     }
