@@ -1,14 +1,18 @@
 ## Lockerly VFW Locker Rental Manager - P4 Assignment
 
-Lockerly is a simple application local Veteran of Foreign Wars clubs can use to manage locker assignments, dart checkouts, pool cue leasing or borrowing of any club items and vice versa if a member loans something to the club.
+Lockerly is a simple application local Veteran of Foreign Wars clubs can use to manage locker assignments, dart checkouts, pool cue leasing or borrowing of any club items and vice versa if a member loans something to the club. [Watch the screencast of this assignment here.](https://lookback.io/watch/QJmZ5nxjAjGF3CjFh)
+
+The live version of the site [can be found here](http://p4.josephandrewlee.com).
+
+To log in as an administrator, use jill@harvard.edu with the password 123. To log in as a normal user use jamal@harvard.edu with the password 123.
 
 ## Official Documentation
 
-This Readme is pretty much the only official documentation for my applciation, but more documentation for the Laravel framework it's built on can be found on the [Laravel website](http://laravel.com/docs).
+This Readme is pretty much the only official documentation for my application, but more documentation for the Laravel framework it's built on can be found on the [Laravel website](http://laravel.com/docs).
 
 ## Contributing
 
-You are invited to please help strenghten this application with tips and code.
+Please help strengthen this application with tips and code.
 
 ## Security Vulnerabilities
 
