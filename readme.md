@@ -2,6 +2,8 @@
 
 Lockerly is a simple application local Veteran of Foreign Wars clubs can use to manage locker assignments, dart checkouts, pool cue leasing or borrowing of any club items and vice versa if a member loans something to the club. [Watch the screencast of this assignment here.](https://lookback.io/watch/QJmZ5nxjAjGF3CjFh)
 
+My P4 Planning Document [can be found here.](https://docs.google.com/document/d/1TO_uEgFHO4YnqoE71ALEvCQ4GlzPJAECwf9JGbaJTTk/edit?usp=sharing).
+
 The live version of the site [can be found here](http://p4.josephandrewlee.com).
 
 To log in as an administrator, use jill@harvard.edu with the password 123. To log in as a normal user use jamal@harvard.edu with the password 123.
